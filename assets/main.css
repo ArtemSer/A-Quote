@@ -9,7 +9,7 @@
   1. Main content
     - 1.0 Quote
     - 1.1 Author
-    - 1.2 Text
+    - 1.2 Buttons
     - 1.3 Social style
   2. Responsive style
   ---------------------------------------------------*/
@@ -25,6 +25,21 @@
 html, body {
     height: 100%;
     overflow: hidden;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: #000;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /*------------ End. Body ------------*/
@@ -56,14 +71,79 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-/* - 1.1 Author */
+/* - 1.1 Author & Text */
 .author {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: .2em;
-    font-size: 5.6rem;
+    font-size: 5.4rem;
     padding-bottom: 40px;
     max-width: 960px;
     margin: 0 auto;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 42px;
+    font-size: 20px;
+    padding: 0 60px;
+    max-width: 920px;
+    margin: auto;
+}
+
+/* - 1.2 Buttons */
+.quote_next {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.a-button {
+    border: 1px solid #000000;
+    color: #000000;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    height: 45px;
+    letter-spacing: .1rem;
+    line-height: 45px;
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: top;
+    width: 170px;
+}
+
+.a-button:before {
+    content: '';
+    height: 200px;
+    background: #ffffff;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    width: 260px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+}
+
+.a-button:after {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    z-index: 999;
+    position: relative;
+    content: "Next Quote"
+}
+
+.a-button:hover:before {
+    top: -60px;
+    right: -50px;
+}
+
+.a-button:hover:after {
+    color: #000000;
 }
