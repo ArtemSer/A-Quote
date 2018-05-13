@@ -117,13 +117,14 @@ html, div, span, a, ul, li {
 
 /* - 1.2 Buttons */
 .quote_next {
+    cursor: pointer;
     max-width: 600px;
     margin: 40px auto 0;
     text-align: center;
 }
 
 .a-button {
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     color: #ffffff;
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
