@@ -11,7 +11,7 @@ space.height = background.height = height;
 
 
 // Second canvas used for the stars
-bgCtx.fillStyle = '#05004c';
+bgCtx.fillStyle = "#05004c";
 bgCtx.fillRect(0,0,width,height);
 
 // stars
@@ -32,9 +32,9 @@ Star.prototype.reset = function(){
 Star.prototype.update = function(){
     this.x -= this.speed;
     if(this.x<0)
-        this.reset();
+        {this.reset();}
     else
-        bgCtx.fillRect(this.x,this.y,this.size,this.size);
+        {bgCtx.fillRect(this.x,this.y,this.size,this.size);}
 
 };
 
