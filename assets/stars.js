@@ -57,8 +57,7 @@ ShootingStar.prototype.update = function(){
     if(this.active){
         this.x-=this.speed;
         this.y+=this.speed;
-        if(this.x<0 || this.y >= height)
-            this.reset();
+        if(this.x<0 || this.y >= height) {this.reset();}
         else{
             bgCtx.lineWidth = this.size;
             bgCtx.beginPath();
@@ -68,18 +67,17 @@ ShootingStar.prototype.update = function(){
         }
     }
     else{
-        if(this.waitTime < new Date().getTime())
-            this.active = true;
+        if(this.waitTime < new Date().getTime()) {this.active = true;}
     }
 };
 
 const entities = [];
 
 // init the stars
-for(let i=0; i < height; i++)
+for(let i=0; i < height; i++) {
     entities.push(new Star({x:Math.random()*width,
                             y:Math.random()*height}));
-
+}
 
 // Add 3 shooting stars.
 entities.push(new ShootingStar());
@@ -88,14 +86,14 @@ entities.push(new ShootingStar());
 
 //animate background
 function animate(){
-    bgCtx.fillStyle = '#05004c';
+    bgCtx.fillStyle = "#05004c";
     bgCtx.fillRect(0,0,width,height);
-    bgCtx.fillStyle = '#ffffff';
-    bgCtx.strokeStyle = '#ffffff';
+    bgCtx.fillStyle = "#ffffff";
+    bgCtx.strokeStyle = "#ffffff";
 
     let entLen = entities.length;
 
-    while(entLen--) entities[entLen].update();
+    while(entLen--) {entities[entLen].update();}
 
     requestAnimationFrame(animate);
 }
