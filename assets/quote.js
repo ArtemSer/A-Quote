@@ -56,7 +56,7 @@ $(document).ready(function () {
         let quoteRandomize = Math.floor(Math.random() * quoteList.length),
             quoteMain = quoteList[quoteRandomize].quote,
             quoteAuthor = quoteList[quoteRandomize].author;
-        $(".text").fadeOut("1000").fadeIn("3000").text(quoteMain);
+        $(".text").fadeOut("1000).fadeIn("3000").text(quoteMain)
         $(".author").fadeOut("1000").fadeIn("3000").text(quoteAuthor);
     }
     $(".tweet").on("click", function () {
